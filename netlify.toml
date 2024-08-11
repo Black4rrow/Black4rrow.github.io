@@ -1,0 +1,18 @@
+[build]
+  functions = "netlify/functions"
+  publish = "."
+
+[[redirects]]
+  from = "/margot/get"
+  to = "/.netlify/functions/get-json?user=margot"
+  status = 200
+
+[[redirects]]
+  from = "/nathan/get"
+  to = "/.netlify/functions/get-json?user=nathan"
+  status = 200
+
+[[redirects]]
+  from = "/set/file"
+  to = "/.netlify/functions/set-json"
+  status = 200
