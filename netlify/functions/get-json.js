@@ -1,22 +1,12 @@
 const fs = require('fs');
-const path = require('path'); // Importation correcte du module path
+const path = require('path');
 
 exports.handler = async function(event) {
-  // Récupérer le chemin complet de l'URL
   const pathParts = event.path.split('/'); 
-  const user = pathParts[1]; // "margot" ou "nathan" doit être dans le 2ème segment de l'URL
+  const user = pathParts[1]; 
 
-  let filePath = '';
-  if (user === 'margot') {
-    filePath = __dirname + '/../../files/to_margot.json'; // Création manuelle du chemin
-  } else if (user === 'nathan') {
-    filePath = __dirname + '/../../files/to_nathan.json';
-  } else {
-    return {
-      statusCode: 404,
-      body: JSON.stringify({ message: `User not found: ${user}` }),
-    };
-  }
+  // Construire le chemin absolu au fichier JSON
+  let filePath = path.resolve(__dirname, `./files/to_${user}.json`);
 
   try {
     const data = fs.readFileSync(filePath, 'utf8');
