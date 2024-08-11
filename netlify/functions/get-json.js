@@ -1,15 +1,16 @@
+const fs = require('fs');
+const path = require('path'); // Importation correcte du module path
+
 exports.handler = async function(event) {
   // Récupérer le chemin complet de l'URL
-  const path = event.path;
-  
-  // Extraire le nom d'utilisateur à partir du chemin
-  const user = path.split('/')[1]; // "margot" est ici la deuxième partie du chemin
+  const pathParts = event.path.split('/'); 
+  const user = pathParts[1]; // "margot" ou "nathan" doit être dans le 2ème segment de l'URL
 
   let filePath = '';
   if (user === 'margot') {
-    filePath = path.join(__dirname, '../../files/to_margot.json');
+    filePath = __dirname + '/../../files/to_margot.json'; // Création manuelle du chemin
   } else if (user === 'nathan') {
-    filePath = path.join(__dirname, '../../files/to_nathan.json');
+    filePath = __dirname + '/../../files/to_nathan.json';
   } else {
     return {
       statusCode: 404,
@@ -17,13 +18,20 @@ exports.handler = async function(event) {
     };
   }
 
-  const data = fs.readFileSync(filePath, 'utf8');
+  try {
+    const data = fs.readFileSync(filePath, 'utf8');
 
-  return {
-    statusCode: 200,
-    body: data,
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  };
+    return {
+      statusCode: 200,
+      body: data,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    };
+  } catch (error) {
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ message: `Failed to read file: ${error.message}` }),
+    };
+  }
 };
