@@ -12,7 +12,7 @@ exports.handler = async function(event) {
   } else {
     return {
       statusCode: 404,
-      body: JSON.stringify({ message: 'User not found' }),
+      body: JSON.stringify({ message: 'User not found: ${user}' }),
     };
   }
 
