@@ -1,8 +1,9 @@
-const fs = require('fs');
-const path = require('path');
-
 exports.handler = async function(event) {
-  const { user } = event.queryStringParameters;
+  // Récupérer le chemin complet de l'URL
+  const path = event.path;
+  
+  // Extraire le nom d'utilisateur à partir du chemin
+  const user = path.split('/')[1]; // "margot" est ici la deuxième partie du chemin
 
   let filePath = '';
   if (user === 'margot') {
