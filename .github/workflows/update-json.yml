@@ -1,0 +1,26 @@
+name: Update JSON
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  update-json:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      
+    - name: Update JSON File
+      run: |
+        echo "${{ github.event.inputs.content }}" | base64 -d > json/person1.json
+
+    - name: Commit changes
+      run: |
+        git config --global user.name 'GitHub Action'
+        git config --global user.email 'action@github.com'
+        git add json/person1.json
+        git commit -m "Updated person1.json via GitHub Action"
+        git push

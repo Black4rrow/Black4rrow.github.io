@@ -1,15 +1,18 @@
 [build]
   functions = "netlify/functions"
-  publish = "public"
-
-[functions]
-  node_bundler = "esbuild"  # Optionnel, pour spécifier le bundler si vous utilisez des modules externes
-  timeout = 10              # Délai d'exécution maximum pour les fonctions serverless
+  publish = "."
 
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
+  from = "/margot/get"
+  to = "/.netlify/functions/get-json?user=margot"
   status = 200
 
-[context.production.environment]
-  NODE_ENV = "production"
+[[redirects]]
+  from = "/nathan/get"
+  to = "/.netlify/functions/get-json?user=nathan"
+  status = 200
+
+[[redirects]]
+  from = "/set/file"
+  to = "/.netlify/functions/set-json"
+  status = 200
