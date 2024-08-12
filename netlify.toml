@@ -1,26 +1,15 @@
 [build]
-  # Chemin vers le dossier contenant les fonctions serverless
   functions = "netlify/functions"
-
-  # Dossier de publication du site (si vous avez une partie front-end)
   publish = "public"
 
-# Configuration spécifique pour les fonctions serverless
 [[functions]]
-  # Spécifie le répertoire où se trouvent les fonctions
   directory = "netlify/functions"
-
-  # Personnalisation du délai d'exécution des fonctions (facultatif)
   timeout = 10
 
-# Rediriger toutes les demandes non gérées par des fichiers ou des fonctions vers index.html (facultatif, utile pour les SPAs)
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
 
-# Paramètres pour l'exécution de la fonction (facultatif, utile pour définir des variables d'environnement)
-[context.production]
-  environment = { 
-    NODE_ENV = "production"
-  }
+[context.production.environment]
+  NODE_ENV = "production"
