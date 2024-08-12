@@ -6,7 +6,7 @@ exports.handler = async function(event) {
   const user = pathParts[1]; 
 
   // Construire le chemin absolu au fichier JSON
-  let filePath = path.resolve(__dirname, `../files/to_${user}.json`);
+  let filePath = path.resolve(__dirname, `../../files/to_${user}.json`);
 
   try {
     const data = fs.readFileSync(filePath, 'utf8');
