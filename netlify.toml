@@ -2,9 +2,9 @@
   functions = "netlify/functions"
   publish = "public"
 
-[[functions]]
-  directory = "netlify/functions"
-  timeout = 10
+[functions]
+  node_bundler = "esbuild"  # Optionnel, pour spécifier le bundler si vous utilisez des modules externes
+  timeout = 10              # Délai d'exécution maximum pour les fonctions serverless
 
 [[redirects]]
   from = "/*"
