@@ -8,31 +8,73 @@
 </head>
 <body>
     <header>
-        <h1>Welcome to My Portfolio</h1>
+        <nav>
+            <div class="burger-menu" onclick="toggleMenu()">
+                <img src="./img/ic--round-menu.svg"/>
+            </div>
+            <ul id="navbar">
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
-    <nav>
-        <ul>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <div class="overlay" onclick="closeMenu()"></div>
     <main>
-        <section id="about">
-            <h2>About Me</h2>
-            <p>This is where you can write about yourself.</p>
+        <div class="title">
+            <h1>Nathan MICONI</h1>
+        </div>
+
+        <section id="about" class="section-title">
+            <div class="title">
+                <h2>Qui suis-je ?</h2>
+                <div class="line"></div>
+            </div>
         </section>
-        <section id="projects">
-            <h2>Projects</h2>
-            <p>This is where you can showcase your projects.</p>
+        <section id="projects" class="section-title">
+            <div class="title">
+                <h2>Mes projets</h2>
+                <div class="line"></div>
+            </div>
+            <div class="projects-list">
+                <div class="project odd pro1">
+                    <img src="https://picsum.photos/200" alt="Project 1">
+                    <div class="content">
+                        <h3>Jeu en KMP - A.M.E.S</h3>
+                        <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus et nunc fermentum ultricies. Nullam nec purus et nunc fermentum ultricies.</p>
+                        <p class="skills">Kotlin Git Teamwork</p>
+                    </div>
+                </div>
+                <div class="project even pro2">
+                    <img src="https://picsum.photos/200" alt="Project 2">
+                    <div class="content">
+                        <h3>Project 2</h3>
+                        <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus et nunc fermentum ultricies. Nullam nec purus et nunc fermentum ultricies.</p>
+                        <p class="skills">Kotlin Git Teamwork</p>
+                    </div>
+                </div>
+                <div class="project odd pro3">
+                    <img src="https://picsum.photos/200" alt="Project 3">
+                    <div class="content">
+                        <h3>Modélisation 3D</h3>
+                        <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus et nunc fermentum ultricies. Nullam nec purus et nunc fermentum ultricies.</p>
+                        <p class="skills">Kotlin Git Teamwork</p>
+                    </div>
+                </div>
+            </div>
         </section>
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>This is where you can provide your contact information.</p>
+        <section id="contact" class="section-title">
+            <div class="title">
+                <h2>Me contacter</h2>
+                <div class="line"></div>
+            </div>
         </section>
     </main>
     <footer>
-        <p>&copy; 2023 My Portfolio</p>
+        <p class="copyright">&copy; 2025 - Mon Portfolio - Nathan MICONI</p>
     </footer>
+
+    <canvas id="gridCanvas"></canvas>
+    <script src="javascript.js" defer></script>
 </body>
 </html></section></html>
