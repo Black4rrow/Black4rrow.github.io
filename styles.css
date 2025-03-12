@@ -1,10 +1,22 @@
+:root{
+    --primary-color: rgb(9, 18, 44);
+    --on-primary-color: rgb(190, 49, 68);
+    --secondary-color: rgb(135, 35, 65);
+    --on-secondary-color: rgb(225, 117, 100);
+    --subtitle-color: rgb(200, 200, 200);
+}
+
 *{
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    color: rgb(31, 125, 83);
+    color: var(--on-primary-color);
 }
 
+body {
+    background-color: var(--primary-color);
+    overflow-x: hidden;
+}
 
 canvas {
     position: fixed;
@@ -19,16 +31,25 @@ canvas {
 h1 {
     text-align: left;
     margin-top: 200px;
-    font-size: 50px;
+    font-size: 64px;
 }
 
 .title{
     width: 67.5%;
     margin: 0 auto;
+}
+
+.subtitle{
+    width: 67.5%;
+    margin: 200px auto 5px auto;
     display: flex;
     flex-direction: row;
     align-items: center;
     flex-wrap: wrap;
+}
+
+.subtitle h2{
+    color: var(--subtitle-color);
 }
 
 .title h2,h1{
@@ -36,8 +57,8 @@ h1 {
 }
 
 .title .line{
-    height: 2px;
-    background-color: black;
+    height: 1px;
+    background-color: var(--subtitle-color);
     width: 300px;
     margin-left: 20px;
 }
@@ -46,7 +67,7 @@ h1 {
     position: fixed; 
     top: 0; 
     width: 100%; 
-    background-color: #333;
+    background-color: var(--primary-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -60,12 +81,12 @@ h1 {
 
 #navbar a {
     text-decoration: none;
-    color: white;
+    color: var(--on-primary-color);
     padding: 10px 20px;
 }
 
 #navbar a:hover {
-    background-color: #575757;
+    background-color: var(--on-secondary-color);
 }
 
 .projects-list{
@@ -80,6 +101,7 @@ h1 {
     padding: 10px;
     border-radius: 5px;
     position: relative;
+    margin: 50px 0;
 }
 
 .project img{
@@ -102,8 +124,8 @@ h1 {
 }
 
 .project .description{
-    background-color: rgb(39, 57, 28);
-    color: rgb(37, 95, 56);
+    background-color: var(--secondary-color);
+    color: var(--on-secondary-color);
     padding: 10px;
     border-radius: 4px;
     margin: 20px 0;

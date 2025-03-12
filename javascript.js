@@ -19,7 +19,6 @@ const ctx = canvas.getContext('2d');
 // Ajuste la taille du canvas à celle de la fenêtre
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
-canvas.style.backgroundColor = 'rgb(24, 35, 15)';
 
 const pointRadius = 1;
 const spacing = 40;
