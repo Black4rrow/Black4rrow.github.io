@@ -8,6 +8,8 @@
     --subtitle-color: #d12b28;
     --highlight-color: #ff5722;
     --text-color: #d3d3d3;
+
+    --model-background: #332e2e;
 } 
 
 *{
@@ -124,9 +126,15 @@ h1 {
 }
 
 .project img{
-    width: 400px;
-    height: 400px;
+    height: 100%;
+    width: 60%;
     display: block;
+    transition: transform 0.5s;
+}
+
+.project img:hover{
+    transform: scale(1.01);
+    transition: transform 0.5s;
 }
 
 .project.odd img{
@@ -162,6 +170,7 @@ h1 {
     top: 0;
     width: 67.5%;
     height: 100%;
+    pointer-events: none;
 }
 
 .project.odd .content{

@@ -16,7 +16,6 @@ function closeMenu() {
 const canvas = document.getElementById('gridCanvas');
 const ctx = canvas.getContext('2d');
 
-// Ajuste la taille du canvas à celle de la fenêtre
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
