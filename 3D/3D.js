@@ -1,89 +1,93 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 
+const canvas = document.getElementById('model');
 
 const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-const renderer = new THREE.WebGLRenderer({ alpha: true });
-renderer.setSize(window.innerWidth, window.innerHeight);
-renderer.toneMapping = THREE.ACESFilmicToneMapping;
-renderer.toneMappingExposure = 1;
-renderer.outputEncoding = THREE.sRGBEncoding;
-document.querySelector('.model-container').appendChild(renderer.domElement);
+scene.background = new THREE.Color(0x303030);
 
-const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
+camera.position.set(0, 4, 5);
+
+const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
+renderer.setSize(canvas.clientWidth, canvas.clientWidth);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.75);
 scene.add(ambientLight);
 
 const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-directionalLight.position.set(5, 10, 7.5);
+directionalLight.position.set(5, 5, 5);
 scene.add(directionalLight);
 
-const pmremGenerator = new THREE.PMREMGenerator(renderer);
-const environmentMap = pmremGenerator.fromScene(new RoomEnvironment()).texture;
-scene.environment = environmentMap;
+/*const geometry = new THREE.CylinderGeometry(1, 1, 2, 32);
+const material = new THREE.MeshStandardMaterial({ 
+    color: 0x808080, 
+    roughness: 0.7,
+    metalness: 0.2
+});
+const model = new THREE.Mesh(geometry, material);
+scene.add(model);*/
 
-const loader = new GLTFLoader();
-const textureLoader = new THREE.TextureLoader();
-let model;
-
-loader.load(
-    '../gold_barrel.glb',
-    (gltf) => {
-        model = gltf.scene;
-
-        model.traverse((child) => {
-            if (child.isMesh) {
-                
-                if(child.name == "metal_circles"){
-                    const metalRingTexture = textureLoader.load('metal_ring.png');
-                    metalRingTexture.flipY = false;
-                    child.material = new THREE.MeshStandardMaterial({ map: metalRingTexture, metalness: 1, roughness: 0.6 });
-                }
-
-            }
-
-            if (child.isMesh && child.material && child.material.envMap) {
-                child.material.envMapIntensity = 0.01;
-                child.material.needsUpdate = true;
-            }
-            
-        });
-
-        scene.add(model);
-
-        model.position.set(0, 1, 0);
-        model.scale.set(1.5, 1.5, 1.5);
-
-        animate();
-    },
-    undefined,
-    (error) => {
-        console.error('Erreur lors du chargement du modèle :', error);
-    }
-);
-
-camera.position.set(2, 5, 5); 
+// Pour charger un modèle personnalisé GLTF (en commentaire)
+ const loader = new GLTFLoader();
+ const scaleFactor = 2; 
+ loader.load(
+     './gold_barrel.glb',
+     (gltf) => {
+         const loadedModel = gltf.scene;
+         
+         loadedModel.traverse((child) => {
+             if (child.isMesh) {
+                 child.material = new THREE.MeshStandardMaterial({
+                     color: 0x808080,
+                     roughness: 0.7,
+                     metalness: 0.2
+                 });
+             }
+         });
+         loadedModel.scale.set(scaleFactor, scaleFactor, scaleFactor);
+         scene.add(loadedModel);
+     },
+     undefined,
+     (error) => {
+         console.error('Erreur de chargement du modèle:', error);
+     }
+ );
 
 const controls = new OrbitControls(camera, renderer.domElement);
-controls.enableDamping = true; 
+controls.enableDamping = true;
 controls.dampingFactor = 0.05;
-controls.zoomSpeed = 0.5; 
+controls.enableZoom = true;
+controls.enablePan = false;
+controls.autoRotate = true;
+controls.autoRotateSpeed = 10;
+
+controls.addEventListener( 'change', ()=>{renderer.render(scene, camera)} );
+controls.update();
 
 function animate() {
     requestAnimationFrame(animate);
 
-    if (model) {
-        model.rotation.y += 0.01;
-    }
-
     controls.update();
+    
     renderer.render(scene, camera);
 }
 
 window.addEventListener('resize', () => {
-    camera.aspect = window.innerWidth / window.innerHeight;
+    const width = canvas.clientWidth;
+    
+    camera.aspect = width / width;
     camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    
+    renderer.setSize(width, width);
+    renderer.render(scene, camera);
 });
+
+animate();
+canvas.style.position = 'relative';
+canvas.style.width = '50%';
+canvas.style.aspectRatio = '1/1';
+canvas.style.margin = '0 auto';
+renderer.setSize(canvas.clientWidth, canvas.clientWidth);

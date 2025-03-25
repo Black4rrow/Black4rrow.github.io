@@ -11,7 +11,9 @@
         <nav>
             <div class="burger-menu" onclick="toggleMenu()">
                 <svg class="burger-button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="50" height="50">
-                    <path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="var(--on-primary-color)" stroke-width="2"/>
+                    <path id="top-bar" d="M3 6h18" fill="none" stroke="var(--on-primary-color)" stroke-width="2"/>
+                    <path id="middle-bar" d="M3 12h18" fill="none" stroke="var(--on-primary-color)" stroke-width="2"/>
+                    <path id="bottom-bar" d="M3 18h18" fill="none" stroke="var(--on-primary-color)" stroke-width="2"/>
                 </svg>
             </div>
             <ul id="navbar">
@@ -53,9 +55,9 @@
                 <div class="project even pro2">
                     <a href="./meteo/meteo.html"><img src="https://picsum.photos/200" alt="Project 2"></a>
                     <div class="content">
-                        <h3>Project 2</h3>
+                        <h3>Station météo ESP-32</h3>
                         <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus et nunc fermentum ultricies. Nullam nec purus et nunc fermentum ultricies.</p>
-                        <p class="skills">Kotlin Git Teamwork</p>
+                        <p class="skills">Arduino Kotlin IoT</p>
                     </div>
                 </div>
                 <div class="project odd pro3">
@@ -63,7 +65,7 @@
                     <div class="content">
                         <h3>Modélisation 3D</h3>
                         <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus et nunc fermentum ultricies. Nullam nec purus et nunc fermentum ultricies.</p>
-                        <p class="skills">Kotlin Git Teamwork</p>
+                        <p class="skills">Blender Autonomie Créativité</p>
                     </div>
                 </div>
             </div>
@@ -78,8 +80,6 @@
     <footer>
         <p class="copyright">&copy; 2025 - Mon Portfolio - Nathan MICONI</p>
     </footer>
-
-    <canvas id="gridCanvas"></canvas>
     <script src="javascript.js" defer></script>
 </body>
 </html></section></html>
