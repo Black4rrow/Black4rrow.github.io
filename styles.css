@@ -210,12 +210,13 @@ h1 {
 }
 
 .mobile-links a{
-    width: 32px;
-    height: 32px;
+    width: 48px;
+    height: 48px;
     pointer-events: all;
     background-color: var(--on-primary-color);
     mask-size: 100%;
     mask-repeat: no-repeat;
+    margin: 0 20px;
 }
 
 .copyright {
@@ -346,7 +347,7 @@ h1 {
     .mobile-links{
         display: flex;
         justify-content: center;
-        margin-top: 20px;
+        margin-top: 30px;
     }
 
     .pro1::before{
