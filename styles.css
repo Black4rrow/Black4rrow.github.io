@@ -313,6 +313,10 @@ h1 {
         left: 0;
     }
 
+    .links{
+        display: none;
+    }
+
     .pro1::before{
         background-image: url("https://picsum.photos/200");
     }
