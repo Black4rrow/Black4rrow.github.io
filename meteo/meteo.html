@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,23 +8,28 @@
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="meteo.css">
 </head>
+
 <body>
     <header>
-      <nav>
-          <div class="burger-menu" onclick="toggleMenu()">
-              <svg class="burger-button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="50" height="50">
-                  <path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="var(--on-primary-color)" stroke-width="2"/>
-              </svg>
-          </div>
-          <ul id="navbar">
-              <li class="navbar-element"><span class="highlight nav-number">1.</span> <br><a href="../index.html#about">Qui suis-je ?</a></li>
-              <li class="navbar-element"><span class="highlight nav-number">3.</span> <br><a href="../index.html#contact">Me contacter</a></li>
-              <li class="navbar-element"><span class="highlight nav-number">2.</span> <br><a href="../index.html#projects">Mes projets</a></li>
-          </ul>
+        <nav>
+            <div class="burger-menu" onclick="toggleMenu()">
+                <svg class="burger-button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="50"
+                    height="50">
+                    <path id="top-bar" d="M3 6h18" fill="none" stroke="var(--on-primary-color)" stroke-width="2" />
+                    <path id="middle-bar" d="M3 12h18" fill="none" stroke="var(--on-primary-color)" stroke-width="2" />
+                    <path id="bottom-bar" d="M3 18h18" fill="none" stroke="var(--on-primary-color)" stroke-width="2" />
+                </svg>
+            </div>
+            <ul id="navbar">
+                <li class="navbar-element"><span class="highlight nav-number">1.</span> <br><a href="../index.html#about">Qui suis-je ?</a></li>
+                <li class="navbar-element"><span class="highlight nav-number">3.</span> <br><a href="../index.html#contact">Me contacter</a></li>
+                <li class="navbar-element"><span class="highlight nav-number">2.</span> <br><a href="../index.html#projects">Mes projets</a></li>
+            </ul>
         </nav>
     </header>
     <div class="overlay" onclick="closeMenu()"></div>
     <main>
     </main>
+    <script src="../javascript.js" defer></script>
 </body>
-</html></html>
+</html>

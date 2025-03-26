@@ -174,6 +174,28 @@ h1 {
     align-items: start;
 }
 
+.links{
+    display: flex;
+    margin-top: 8px;
+}
+
+.links a.git{
+    mask-image: url("/img/git.svg");
+}
+
+.links a.fiverr{
+    mask-image: url("/img/fiverr.svg");
+}
+
+.links a{
+    width: 32px;
+    height: 32px;
+    pointer-events: all;
+    background-color: var(--on-primary-color);
+    mask-size: 100%;
+    mask-repeat: no-repeat;
+}
+
 .copyright {
     width: 100%;
     color: rgb(137, 137, 137);
@@ -280,6 +302,15 @@ h1 {
         height: 300px;
         background-size: cover;
         margin: 25px 0;
+    }
+
+    .project a{
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
     }
 
     .pro1::before{

@@ -76,7 +76,7 @@ function animate() {
 }
 
 window.addEventListener('resize', () => {
-    const width = canvas.clientWidth;
+    const width = window.innerWidth / 2;
     
     camera.aspect = width / width;
     camera.updateProjectionMatrix();
