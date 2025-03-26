@@ -119,12 +119,13 @@ h1 {
     height: 100%;
     width: 60%;
     display: block;
-    transition: transform 0.5s;
+    transition: transform 0.25s;
+    object-fit: cover;
 }
 
 .project img:hover{
     transform: scale(1.01);
-    transition: transform 0.5s;
+    transition: transform 0.25s;
 }
 
 .project.odd img{
@@ -196,6 +197,27 @@ h1 {
     mask-repeat: no-repeat;
 }
 
+.mobile-links{
+    display: none;
+}
+
+.mobile-links a.git{
+    mask-image: url("/img/git.svg");
+}
+
+.mobile-links a.fiverr{
+    mask-image: url("/img/fiverr.svg");
+}
+
+.mobile-links a{
+    width: 32px;
+    height: 32px;
+    pointer-events: all;
+    background-color: var(--on-primary-color);
+    mask-size: 100%;
+    mask-repeat: no-repeat;
+}
+
 .copyright {
     width: 100%;
     color: rgb(137, 137, 137);
@@ -240,7 +262,7 @@ h1 {
         flex-direction: column;
         z-index: 1000;
         transform: translateX(100%);
-        transition: transform 0.5s;
+        transition: transform 0.4s;
     }
 
     #navbar.active {
@@ -249,7 +271,7 @@ h1 {
     }
 
     #top-bar, #middle-bar, #bottom-bar {
-        transition: transform 0.5s;
+        transition: transform 0.4s;
         transform-origin: center;
     }
     
@@ -301,10 +323,10 @@ h1 {
         border: solid;
         height: 300px;
         background-size: cover;
-        margin: 25px 0;
+        margin: 50px 0;
     }
 
-    .project a{
+    .project>a{
         display: block;
         width: 100%;
         height: 100%;
@@ -313,8 +335,18 @@ h1 {
         left: 0;
     }
 
+    .project .skills{
+        color: rgb(19, 19, 19);
+    }
+
     .links{
         display: none;
+    }
+
+    .mobile-links{
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
     }
 
     .pro1::before{
@@ -326,7 +358,7 @@ h1 {
     }
 
     .pro3::before{
-        background-image: url("https://picsum.photos/200");
+        background-image: url("/img/model-pic.png");
     }
 
     .title .line{

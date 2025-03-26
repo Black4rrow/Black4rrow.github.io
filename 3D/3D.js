@@ -76,7 +76,7 @@ function animate() {
 }
 
 window.addEventListener('resize', () => {
-    const width = window.innerWidth / 2;
+    const width = window.innerWidth / 1.333;
     
     camera.aspect = width / width;
     camera.updateProjectionMatrix();
@@ -87,7 +87,7 @@ window.addEventListener('resize', () => {
 
 animate();
 canvas.style.position = 'relative';
-canvas.style.width = '50%';
+canvas.style.width = '75%';
 canvas.style.aspectRatio = '1/1';
 canvas.style.margin = '0 auto';
 renderer.setSize(canvas.clientWidth, canvas.clientWidth);
