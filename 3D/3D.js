@@ -34,7 +34,7 @@ scene.add(model);*/
  const loader = new GLTFLoader();
  const scaleFactor = 2; 
  loader.load(
-     './gold_barrel.glb',
+     '/3D/gold_barrel.glb',
      (gltf) => {
          const loadedModel = gltf.scene;
          
