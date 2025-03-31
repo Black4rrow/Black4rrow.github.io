@@ -1,13 +1,16 @@
  :root {
-    --primary-color: #251e1e; 
-    --on-primary-color: #d12b28;
+    --primary-color: #f2ebeb; 
+    --on-primary-color: #5b3a38;
+
     --secondary-color: #282828;
     --on-secondary-color: #ee635b;
+
     --tertiary-color: #231616;
     --on-tertiary-color: #000000;
+    
     --subtitle-color: #d12b28;
     --highlight-color: #ff5722;
-    --text-color: #d3d3d3;
+    --text-color: #000000;
 
     --model-background: #332e2e;
 } 
@@ -17,6 +20,7 @@
     margin: 0;
     padding: 0;
     color: var(--on-primary-color);
+    font-size: 18px;
 }
 
 body {
@@ -32,13 +36,17 @@ main{
 
 h1 {
     text-align: left;
-    margin-top: 200px;
     font-size: 64px;
+    margin-top: 16px;
 }
 
 .title{
     width: 100%;
-    margin: 0 auto;
+    margin: 200px auto 0 auto;
+}
+
+.little-bio{
+    margin-top: 52px;
 }
 
 .subtitle{
@@ -225,7 +233,7 @@ h1 {
     background-color: #333;
 
     text-align: center;
-    padding: 10px 0;
+    padding: 25px 0;
 }
 
 .section-title{
