@@ -1,22 +1,24 @@
  :root {
     --primary-color: #f2ebeb; 
-    --on-primary-color: #5b3a38;
+    --on-primary-color: #421625;
 
-    --secondary-color: #282828;
-    --on-secondary-color: #ee635b;
+    --secondary-color: #fffcee;
+    --on-secondary-color: #e57ca1;
 
-    --tertiary-color: #231616;
-    --on-tertiary-color: #000000;
+    --tertiary-color: #ccbfbf;
+    --on-tertiary-color: #391320;
     
     --subtitle-color: #d12b28;
     --highlight-color: #ff5722;
+    
     --text-color: #000000;
+    --light-text-color: #dadac8;
 
     --model-background: #332e2e;
 } 
 
 *{
-    font-family: Arial, sans-serif;
+    font-family: "Poppins-Regular", sans-serif;
     margin: 0;
     padding: 0;
     color: var(--on-primary-color);
@@ -97,6 +99,7 @@ h1 {
 
 #navbar a:hover {
     background-color: var(--on-secondary-color);
+    border-radius: 4px;
 }
 
 .highlight{
@@ -123,7 +126,7 @@ h1 {
     margin: 50px 0;
 }
 
-.project img{
+.project .project-image{
     height: 100%;
     width: 60%;
     display: block;
@@ -131,17 +134,17 @@ h1 {
     object-fit: cover;
 }
 
-.project img:hover{
+.project .project-image:hover{
     transform: scale(1.01);
     transition: transform 0.25s;
 }
 
-.project.odd img{
+.project.odd .project-image{
     float: left;
     margin-right: 10px;
 }
 
-.project.even img{
+.project.even .project-image{
     float: right;
     margin-left: 10px;
 }
@@ -183,54 +186,45 @@ h1 {
     align-items: start;
 }
 
+.link-image{
+    width: 100%;
+    height: 100%;
+    display: block;
+    transition: transform 0.25s;
+}
+
+.link-image:hover{
+    transform: scale(1.1);
+    transition: transform 0.25s;
+}
+
 .links{
     display: flex;
     margin-top: 8px;
-}
-
-.links a.git{
-    mask-image: url("/img/git.svg");
-}
-
-.links a.fiverr{
-    mask-image: url("/img/fiverr.svg");
 }
 
 .links a{
     width: 32px;
     height: 32px;
     pointer-events: all;
-    background-color: var(--on-primary-color);
-    mask-size: 100%;
-    mask-repeat: no-repeat;
 }
 
 .mobile-links{
     display: none;
 }
 
-.mobile-links a.git{
-    mask-image: url("/img/git.svg");
-}
-
-.mobile-links a.fiverr{
-    mask-image: url("/img/fiverr.svg");
-}
 
 .mobile-links a{
     width: 48px;
     height: 48px;
     pointer-events: all;
-    background-color: var(--on-primary-color);
-    mask-size: 100%;
-    mask-repeat: no-repeat;
     margin: 0 20px;
 }
 
 .copyright {
     width: 100%;
-    color: rgb(137, 137, 137);
-    background-color: #333;
+    color: rgb(69, 69, 69);
+    background-color: #c6c6c6;
 
     text-align: center;
     padding: 25px 0;
@@ -272,6 +266,10 @@ h1 {
         z-index: 1000;
         transform: translateX(100%);
         transition: transform 0.4s;
+    }
+
+    #navbar a{
+        color: var(--on-tertiary-color);
     }
 
     #navbar.active {
@@ -348,6 +346,10 @@ h1 {
         color: rgb(19, 19, 19);
     }
 
+    .project-title{
+        color: var(--light-text-color);
+    }
+
     .links{
         display: none;
     }
@@ -392,7 +394,7 @@ h1 {
         color: rgb(193, 193, 193);
     }
 
-    .project img{
+    .project .project-image{
         display: none;
     }
 
@@ -413,4 +415,84 @@ h1 {
     }
 
     
+}
+
+@font-face{
+    font-family: "Poppins-Black";
+    src: url("/fonts/Poppins-Black.ttf") format("truetype");
+}
+
+@font-face{
+    font-family: "Poppins-Bold";
+    src: url("/fonts/Poppins-Bold.ttf") format("truetype");
+}
+
+@font-face{
+    font-family: "Poppins-Light";
+    src: url("/fonts/Poppins-Light.ttf") format("truetype");
+}
+
+@font-face{
+    font-family: "Poppins-Medium";
+    src: url("/fonts/Poppins-Medium.ttf") format("truetype");
+}
+
+@font-face{
+    font-family: "Poppins-Regular";
+    src: url("/fonts/Poppins-Regular.ttf") format("truetype");
+}
+
+@font-face{
+    font-family: "Poppins-SemiBold";
+    src: url("/fonts/Poppins-SemiBold.ttf") format("truetype");
+}
+
+@font-face{
+    font-family: "Poppins-Thin";
+    src: url("/fonts/Poppins-Thin.ttf") format("truetype");
+}
+
+@font-face{
+    font-family: "Poppins-ThinItalic";
+    src: url("/fonts/Poppins-ThinItalic.ttf") format("truetype");
+}
+
+@font-face{
+    font-family: "Poppins-Italic";
+    src: url("/fonts/Poppins-Italic.ttf") format("truetype");
+}
+
+@font-face{
+    font-family: "Poppins-LightItalic";
+    src: url("/fonts/Poppins-LightItalic.ttf") format("truetype");
+}
+
+@font-face{
+    font-family: "Poppins-MediumItalic";
+    src: url("/fonts/Poppins-MediumItalic.ttf") format("truetype");
+}
+
+@font-face{
+    font-family: "Poppins-RegularItalic";
+    src: url("/fonts/Poppins-RegularItalic.ttf") format("truetype");
+}
+
+@font-face{
+    font-family: "Poppins-SemiBoldItalic";
+    src: url("/fonts/Poppins-SemiBoldItalic.ttf") format("truetype");
+}
+
+@font-face{
+    font-family: "Poppins-BoldItalic";
+    src: url("/fonts/Poppins-BoldItalic.ttf") format("truetype");
+}
+
+@font-face{
+    font-family: "Poppins-BlackItalic";
+    src: url("/fonts/Poppins-BlackItalic.ttf") format("truetype");
+}
+
+@font-face{
+    font-family: "Poppins-ThinItalic";
+    src: url("/fonts/Poppins-ThinItalic.ttf") format("truetype");
 }
