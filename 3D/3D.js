@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
 
 const canvas = document.getElementById('model');
 
@@ -30,8 +31,17 @@ const material = new THREE.MeshStandardMaterial({
 const model = new THREE.Mesh(geometry, material);
 scene.add(model);*/
 
+
+
 // Pour charger un modèle personnalisé GLTF (en commentaire)
  const loader = new GLTFLoader();
+
+const dracoLoader = new DRACOLoader();
+dracoLoader.setDecoderPath('https://www.gstatic.com/draco/versioned/decoders/1.5.7/');
+dracoLoader.setDecoderConfig({ type: 'js' });
+
+loader.setDRACOLoader(dracoLoader);
+
  const scaleFactor = 2; 
  loader.load(
      '/3D/gold_barrel.glb',
