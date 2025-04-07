@@ -1,6 +1,6 @@
  :root {
     --primary-color: #f2ebeb; 
-    --on-primary-color: #421625;
+    --on-primary-color: #611717;
 
     --secondary-color: #fffcee;
     --on-secondary-color: #e57ca1;
@@ -8,7 +8,7 @@
     --tertiary-color: #ccbfbf;
     --on-tertiary-color: #391320;
     
-    --subtitle-color: #d12b28;
+    --text1-color: #d12b28;
     --highlight-color: #ff5722;
     
     --text-color: #000000;
@@ -61,7 +61,7 @@ h1 {
 }
 
 .subtitle h2{
-    color: var(--subtitle-color);
+    color: var(--text1-color);
 }
 
 .title h2,h1{
@@ -70,7 +70,7 @@ h1 {
 
 .title .line{
     height: 1px;
-    background-color: var(--subtitle-color);
+    background-color: var(--text1-color);
     width: 300px;
     margin-left: 20px;
 }
@@ -132,6 +132,7 @@ h1 {
     display: block;
     transition: transform 0.25s;
     object-fit: cover;
+    border-radius: 4px;
 }
 
 .project .project-image:hover{
@@ -154,7 +155,7 @@ h1 {
 
 .project .description{
     background-color: var(--secondary-color);
-    color: var(--on-secondary-color);
+    color: var(--text1-color);
     padding: 10px;
     border-radius: 4px;
     margin: 20px 0;
@@ -207,6 +208,18 @@ h1 {
     width: 32px;
     height: 32px;
     pointer-events: all;
+}
+
+.image-link{
+    position: relative;
+}
+
+.open-icon{
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    width: 24px;
+    height: 24px;
 }
 
 .mobile-links{
@@ -365,7 +378,7 @@ h1 {
     }
 
     .pro2::before{
-        background-image: url("https://picsum.photos/200");
+        background-image: url("/img/station_code.png");
     }
 
     .pro3::before{

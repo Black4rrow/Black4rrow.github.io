@@ -1,0 +1,87 @@
+main{
+    margin-top: 200px;
+}
+
+.images-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+main > h2,p{
+    text-align: justify;
+}
+
+main > h2{
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+main > p{
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+main > h3{
+    font-size: 18px;
+    margin-top: 20px;
+    font-style: italic;
+    font-family: "Poppins-Regular", sans-serif;
+}
+
+.steps{
+    font-size: 16px;
+    margin-left: 50px;
+    font-style: italic;
+}
+
+.red{
+    font-size: 16px;
+    color: red;
+}
+
+.blue{
+    font-size: 16px;
+    color: blue;
+}
+
+.green{
+    font-size: 16px;
+    color: green;
+}
+
+.technical{
+    font-size: 16px;
+    font-style: italic;
+    color: #5c2f2f;
+}
+
+.img-legend{
+    font-size: 14px;
+    color: #694d4d;
+    margin-top: 25px;
+}
+
+.seuil-img{
+    width: 100%;
+    height: auto;
+    margin: 15px 0;
+}
+
+.modal{
+    position: absolute;
+}
+
+@media screen and (max-width: 768px) {
+    main{
+        margin-top: 100px;
+    }
+
+    .meteo-image{
+        width: 45%;
+        height: auto;
+    }
+}

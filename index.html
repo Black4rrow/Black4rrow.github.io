@@ -1,25 +1,31 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <header>
         <nav>
             <div class="burger-menu" onclick="toggleMenu()">
-                <svg class="burger-button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="50" height="50">
-                    <path id="top-bar" d="M3 6h18" fill="none" stroke="var(--on-primary-color)" stroke-width="2"/>
-                    <path id="middle-bar" d="M3 12h18" fill="none" stroke="var(--on-primary-color)" stroke-width="2"/>
-                    <path id="bottom-bar" d="M3 18h18" fill="none" stroke="var(--on-primary-color)" stroke-width="2"/>
+                <svg class="burger-button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="50"
+                    height="50">
+                    <path id="top-bar" d="M3 6h18" fill="none" stroke="var(--on-primary-color)" stroke-width="2" />
+                    <path id="middle-bar" d="M3 12h18" fill="none" stroke="var(--on-primary-color)" stroke-width="2" />
+                    <path id="bottom-bar" d="M3 18h18" fill="none" stroke="var(--on-primary-color)" stroke-width="2" />
                 </svg>
             </div>
             <ul id="navbar">
-                <li class="navbar-element"><span class="highlight nav-number">1.</span> <br><a href="#about">Qui suis-je ?</a></li>
-                <li class="navbar-element"><span class="highlight nav-number">2.</span> <br><a href="#projects">Mes projets</a></li>
-                <li class="navbar-element"><span class="highlight nav-number">3.</span> <br><a href="#contact">Me contacter</a></li>
+                <li class="navbar-element"><span class="highlight nav-number">1.</span> <br><a href="#about">Qui suis-je
+                        ?</a></li>
+                <li class="navbar-element"><span class="highlight nav-number">2.</span> <br><a href="#projects">Mes
+                        projets</a></li>
+                <li class="navbar-element"><span class="highlight nav-number">3.</span> <br><a href="#contact">Me
+                        contacter</a></li>
             </ul>
         </nav>
     </header>
@@ -28,7 +34,9 @@
         <div class="title">
             <p>Bonjour, je m'appelle</p>
             <h1>Nathan MICONI</h1>
-            <p class="little-bio">Je suis étudiant en BUT 3 informatique en spécialité mobile. <br><br>J'aime faire travailler ma créativité, ainsi, j'ai commencé à créer différents jeux, et offrir mes services en modélisation 3D. </p>
+            <p class="little-bio">Je suis étudiant en BUT 3 informatique en spécialité mobile. <br><br>J'aime faire
+                travailler ma créativité, ainsi, j'ai commencé à créer différents jeux, et offrir mes services en
+                modélisation 3D. </p>
         </div>
 
         <section id="about" class="section-title">
@@ -37,7 +45,8 @@
                 <div class="line"></div>
             </div>
             <p class="biography">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam molestiae consectetur sit sapiente culpa numquam repudiandae suscipit atque veniam exercitationem! Eligendi dolores voluptates ex quis.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam molestiae consectetur sit sapiente
+                culpa numquam repudiandae suscipit atque veniam exercitationem! Eligendi dolores voluptates ex quis.
             </p>
         </section>
         <section id="projects" class="section-title">
@@ -47,47 +56,65 @@
             </div>
             <div class="projects-list">
                 <div class="project odd pro1">
-                    <a href="./AMES/AMES.html"><img src="https://picsum.photos/200" alt="Project 1" class="project-image"></a>
+                    <a href="./AMES/AMES.html"><img src="https://picsum.photos/200" alt="Project 1"
+                            class="project-image"></a>
                     <div class="content">
                         <h3 class="project-title">Jeu en KMP - A.M.E.S</h3>
-                        <p class="description">Portage du jeu A.M.E.S, à l'origine sur iOS seulement, sur les plateformes Android et iOS. Nous avons également remis à jour tout le projet.</p>
+                        <p class="description">Portage du jeu A.M.E.S, à l'origine sur iOS seulement, sur les
+                            plateformes Android et iOS. Nous avons également remis à jour tout le projet.</p>
                         <p class="skills">Kotlin - Git - Teamwork</p>
                         <div class="links">
-                            <a href="https://github.com/NicolasBourdin88/A.M.E.S-3.0" class="git"><img src="./img/git.svg" class="link-image"></a>
+                            <a href="https://github.com/NicolasBourdin88/A.M.E.S-3.0" class="git image-link"><img
+                                    src="./img/git.svg" class="link-image"><img src="/img/open_icon.png"
+                                    class="open-icon"></a>
                         </div>
                     </div>
                     <div class="mobile-links">
-                        <a href="https://github.com/NicolasBourdin88/A.M.E.S-3.0" class="git"><img src="./img/git.svg" class="link-image"></a>
+                        <a href="https://github.com/NicolasBourdin88/A.M.E.S-3.0" class="git image-link"><img src="./img/git.svg"
+                                class="link-image"><img src="/img/open_icon.png" class="open-icon"></a>
                     </div>
                 </div>
                 <div class="project even pro2">
-                    <a href="./meteo/meteo.html"><img src="https://picsum.photos/200" alt="Project 2" class="project-image"></a>
+                    <a href="./meteo/meteo.html"><img src="/img/station_code.png" alt="Project 2"
+                            class="project-image"></a>
                     <div class="content">
                         <h3 class="project-title">Station météo ESP-32</h3>
-                        <p class="description">Création d'un objet qui récupère des données (températre, humidité, CO2, ...), et d'une application qui les affiche en temps réel sous forme de graphes.</p>
+                        <p class="description">Création d'un objet qui récupère des données (températre, humidité, CO2,
+                            ...), et d'une application qui les affiche en temps réel sous forme de graphes.</p>
                         <p class="skills">Arduino - Kotlin - IoT</p>
                         <div class="links">
-                            <a href="https://github.com/Black4rrow/station_meteo_kotlin" class="kotlin"><img src="./img/kotlin.svg" class="link-image"></a>
-                            <a href="https://github.com/Black4rrow/station_meteo_arduino" class="arduino"><img src="./img/arduino.svg" class="link-image"></a>
+                            <a href="https://github.com/Black4rrow/station_meteo_kotlin" class="kotlin image-link"><img
+                                    src="./img/kotlin.svg" class="link-image"><img src="/img/open_icon.png"
+                                    class="open-icon"></a>
+                            <a href="https://github.com/Black4rrow/station_meteo_arduino" class="arduino image-link"><img
+                                    src="./img/arduino.svg" class="link-image"><img src="/img/open_icon.png"
+                                    class="open-icon"></a>
                         </div>
                     </div>
                     <div class="mobile-links">
-                        <a href="https://github.com/Black4rrow/station_meteo_kotlin" class="kotlin"><img src="./img/kotlin.svg" class="link-image"></a>
-                        <a href="https://github.com/Black4rrow/station_meteo_arduino" class="arduino"><img src="./img/arduino.svg" class="link-image"></a>
+                        <a href="https://github.com/Black4rrow/station_meteo_kotlin" class="kotlin image-link"><img
+                                src="./img/kotlin.svg" class="link-image"><img src="/img/open_icon.png"
+                                class="open-icon"></a>
+                        <a href="https://github.com/Black4rrow/station_meteo_arduino" class="arduino image-link"><img
+                                src="./img/arduino.svg" class="link-image"><img src="/img/open_icon.png"
+                                class="open-icon"></a>
                     </div>
                 </div>
                 <div class="project odd pro3">
                     <a href="./3D/3D.html"><img src="/img/model-pic.png" alt="Project 3" class="project-image"></a>
                     <div class="content">
                         <h3 class="project-title">Modélisation 3D</h3>
-                        <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus et nunc fermentum ultricies. Nullam nec purus et nunc fermentum ultricies.</p>
+                        <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus
+                            et nunc fermentum ultricies. Nullam nec purus et nunc fermentum ultricies.</p>
                         <p class="skills">Blender - Autonomie - Créativité</p>
                         <div class="links">
-                            <a href=" https://www.fiverr.com/blackarrow549" class="fiverr"><img src="./img/fiverr.svg" class="link-image"></a>
+                            <a href=" https://www.fiverr.com/blackarrow549" class="fiverr image-link"><img src="./img/fiverr.svg"
+                                    class="link-image"><img src="/img/open_icon.png" class="open-icon"></a>
                         </div>
                     </div>
                     <div class="mobile-links">
-                        <a href=" https://www.fiverr.com/blackarrow549" class="fiverr"><img src="./img/fiverr.svg" class="link-image"></a>
+                        <a href=" https://www.fiverr.com/blackarrow549" class="fiverr image-link"><img src="./img/fiverr.svg"
+                                class="link-image"><img src="/img/open_icon.png" class="open-icon"></a>
                     </div>
                 </div>
             </div>
@@ -104,4 +131,8 @@
     </footer>
     <script src="javascript.js" defer></script>
 </body>
-</html></section></html>
+
+</html>
+</section>
+
+</html>

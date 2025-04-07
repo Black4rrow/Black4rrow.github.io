@@ -29,7 +29,47 @@
     </header>
     <div class="overlay" onclick="closeMenu()"></div>
     <main>
+        <h1>Station météo</h1>
+        <h2>Le projet</h2>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp; Ce projet en binôme a été réalisé dans le cadre du cours IoT (Internet of Things). Nous avions comme objectif de créer un objet en utilisant un ESP-32 et de le faire communiquer avec une application mobile. Avec mon binôme, nous avons donc choisi de faire un station météo capable de récupérer la température, l'humidité, la pression, la quantité de lumière et la concentration en CO2.
+            Pour mener ce projet à bien, nous avons suivi les étapes suivantes :<br><br>
+            <ul class="steps">
+                <li>Création de l'objet et des branchements</li>
+                <li>Mise en place de la base de données</li>
+                <li>Écriture du code de l'objet</li>
+                <li>Création de l'application</li>
+            </ul>
+
+        </p><br><br>
+
+        <h3>L'objet</h3>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;L'objet que nous avons conçu est constitué de 3 bandeaux LED, 3 capteurs et d'un buzzer. Voici son fonctionnement : une boucle tourne en permanence et récupère les données via les différents capteurs, ensuite, les bandeaux LED et le buzzer sont mis à jour. 
+            <br><br>&nbsp;&nbsp;&nbsp;&nbsp;Mais à quoi servent ces LEDs et ce buzzer? Le premier bandeau <span class="red">(rouge)</span>, sert à afficher la température, le deuxième <span class="blue">(bleu)</span>, montre le niveau d'humidité, et enfin, le dernier <span class="green">(vert)</span>, indique la saturation de la pièce en CO2. Cependant, le problème est qu'une pièce trop saturée en CO2 peut être dangereuse pour la santé. <br></p>
+        <p class="img-legend">Voici un schéma qui représente les seuils</p>
+        <img src="./seuils_co2.jpg" alt="Seuils de CO2" class="seuil-img can-fullscreen">
+
+        <p>&nbsp;&nbsp;&nbsp;&nbsp; Si jamais le niveau de CO2 dans la pièce dépasse ce seuil critique, l'objet se transforme alors en véritable alarme. Les 3 bandeaux LED se mettent à clignoter en rouge, et le buzzer emet un puissant son ressemblant à une alarme incendie. Cela continue jusqu'à ce que le niveau de CO2 redescende sous un seuil non dangereux ou que l'objet soit débranché.</p>
+
+        <p><br><br>&nbsp;&nbsp;&nbsp;&nbsp; Enfin, après toute ces étapes, l'ESP-32 rassemble toutes les données récoltées au sein d'un <span class="technical">JSON</span> et les envoies sur une base de données <span class="technical">Firebase</span> à interval de 10 secondes.</p>
+
+        <h3>L'application</h3>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp; L'application sert à consulter ces données à distance, et ce, en temps réel. Lorsqu'on la lance pour la première fois, on doit se connecter au même compte que l'objet utilise. Ensuite, elle met en place un <span class="technical">listener</span> qui "écoute" la base de données lié au compte. Ainsi, dès qu'une nouvelle entrée est ajoutée, l'application le détecte et met à jour l'affichage en conséquence. <br><br>
+            &nbsp;&nbsp;&nbsp;&nbsp; Il y a deux pages principales sur l'application, le menu d'accueil, où nous pouvons voir la empérature, le niveau d'humidité, de lumière et bien-sûr, le taux de CO2. La seconde page, quant à elle, offre plusieurs graphiques. Il y en a un pour chaque donnée, et ceux-ci nous permettent de voir et consulter l'historique des valeurs.</p>
+
+        <h2>Quelques images</h2>
+        <p>Voici des captures d'écrans de l'application et des photos de la maquette de l'objet.</p>
+        <div class="images-container">
+            <img src="./app2.jpg" alt="Capture d'écran de l'application" class="meteo-image can-fullscreen">
+            <img src="./app1.jpg" alt="Capture d'écran de l'application" class="meteo-image can-fullscreen">
+
+            <img src="./object1.jpg" alt="Photo de l'objet" class="meteo-image can-fullscreen">
+            <img src="./object2.jpg" alt="Photo de l'objet" class="meteo-image can-fullscreen">
+        </div>
     </main>
+    <footer>
+        <p class="copyright">&copy; 2025 - Mon Portfolio - Nathan MICONI</p>
+    </footer>
     <script src="../javascript.js" defer></script>
+    <script src="meteo.js" defer></script>
 </body>
 </html>
