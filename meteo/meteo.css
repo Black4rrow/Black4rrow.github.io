@@ -32,7 +32,7 @@ main > h3{
     font-family: "Poppins-Regular", sans-serif;
 }
 
-.steps{
+.steps > li{
     font-size: 16px;
     margin-left: 50px;
     font-style: italic;
@@ -51,12 +51,6 @@ main > h3{
 .green{
     font-size: 16px;
     color: green;
-}
-
-.technical{
-    font-size: 16px;
-    font-style: italic;
-    color: #5c2f2f;
 }
 
 .img-legend{

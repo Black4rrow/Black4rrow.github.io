@@ -21,9 +21,9 @@
                 </svg>
             </div>
             <ul id="navbar">
-                <li class="navbar-element"><span class="highlight nav-number">1.</span> <br><a href="../index.html#about">Qui suis-je ?</a></li>
-                <li class="navbar-element"><span class="highlight nav-number">2.</span> <br><a href="../index.html#projects">Mes projets</a></li>
-                <li class="navbar-element"><span class="highlight nav-number">3.</span> <br><a href="../index.html#contact">Me contacter</a></li>
+                <li class="navbar-element"><a href="../index.html#about">Qui suis-je ?</a></li>
+                <li class="navbar-element"><a href="../index.html#projects">Mes projets</a></li>
+                <li class="navbar-element"><a href="../index.html#contact">Me contacter</a></li>
             </ul>
         </nav>
     </header>
@@ -31,7 +31,7 @@
     <main>
         <h1>Station météo</h1>
         <h2>Le projet</h2>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp; Ce projet en binôme a été réalisé dans le cadre du cours IoT (Internet of Things). Nous avions comme objectif de créer un objet en utilisant un ESP-32 et de le faire communiquer avec une application mobile. Avec mon binôme, nous avons choisi de faire un station météo capable de récupérer la température, l'humidité, la pression, la quantité de lumière et la concentration en CO2.
+        <p>&nbsp;&nbsp;&nbsp;&nbsp; Ce projet en binôme a été réalisé dans le cadre du cours IoT (Internet of Things). Nous avions comme objectif de créer un objet en utilisant un <span class="technical">ESP-32</span> et de le faire communiquer avec une application mobile. Avec mon binôme, nous avons choisi de faire un station météo capable de récupérer la température, l'humidité, la pression, la quantité de lumière et la concentration en CO2.
             Pour mener ce projet à bien, nous avons suivi les étapes suivantes :<br><br>
             <ul class="steps">
                 <li>Création de l'objet et des branchements</li>
@@ -44,13 +44,13 @@
 
         <h3>L'objet</h3>
         <p>&nbsp;&nbsp;&nbsp;&nbsp;L'objet que nous avons conçu est constitué de 3 bandeaux LED, 3 capteurs et d'un buzzer. Voici son fonctionnement : une boucle tourne en permanence et récupère les données via les différents capteurs, ensuite, les bandeaux LED et le buzzer sont mis à jour. 
-            <br><br>&nbsp;&nbsp;&nbsp;&nbsp;Mais à quoi servent ces LEDs et ce buzzer? Le premier bandeau <span class="red">(rouge)</span>, sert à afficher la température, le deuxième <span class="blue">(bleu)</span>, montre le niveau d'humidité, et enfin, le dernier <span class="green">(vert)</span>, indique la saturation de la pièce en CO2. Cependant, le problème est qu'une pièce trop saturée en CO2 peut être dangereuse pour la santé. <br></p>
+            <br><br>&nbsp;&nbsp;&nbsp;&nbsp;Mais à quoi servent ces LEDs et ce buzzer?<br> Le premier bandeau <span class="red">(rouge)</span>, sert à afficher la température, le deuxième <span class="blue">(bleu)</span>, montre le niveau d'humidité, et enfin, le dernier <span class="green">(vert)</span>, indique la saturation de la pièce en CO2. Cependant, le problème est qu'une pièce trop saturée en CO2 peut être dangereuse pour la santé. <br></p>
         <p class="img-legend">Voici un schéma qui représente les seuils</p>
         <img src="./seuils_co2.jpg" alt="Seuils de CO2" class="seuil-img can-fullscreen">
 
         <p>&nbsp;&nbsp;&nbsp;&nbsp; Si jamais le niveau de CO2 dans la pièce dépasse ce seuil critique, l'objet se transforme alors en véritable alarme. Les 3 bandeaux LED se mettent à clignoter en rouge, et le buzzer emet un puissant son ressemblant à une alarme incendie. Cela continue jusqu'à ce que le niveau de CO2 redescende sous un seuil non dangereux ou que l'objet soit débranché.</p>
 
-        <p><br><br>&nbsp;&nbsp;&nbsp;&nbsp; Enfin, après toute ces étapes, l'ESP-32 rassemble toutes les données récoltées au sein d'un <span class="technical">JSON</span> et les envoies sur une base de données <span class="technical">Firebase</span> à interval de 10 secondes.</p>
+        <p><br><br>&nbsp;&nbsp;&nbsp;&nbsp; Enfin, après toute ces étapes, l'<span class="technical">ESP-32</span> rassemble toutes les données récoltées au sein d'un <span class="technical">JSON</span> et les envoies sur une base de données <span class="technical">Firebase</span> à interval de 10 secondes.</p>
 
         <h3>L'application</h3>
         <p>&nbsp;&nbsp;&nbsp;&nbsp; L'application sert à consulter ces données à distance, et ce, en temps réel. Lorsqu'on la lance pour la première fois, on doit se connecter au même compte que l'objet utilise. Ensuite, elle met en place un <span class="technical">listener</span> qui "écoute" la base de données lié au compte. Ainsi, dès qu'une nouvelle entrée est ajoutée, l'application le détecte et met à jour l'affichage en conséquence. <br><br>
