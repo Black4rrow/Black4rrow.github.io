@@ -283,7 +283,7 @@ h1 {
     justify-content: space-around;
 }
 
-.social-links > a,img{
+.social-links > a, .social-links > img{
     width: 32px;
     height: 32px;
 }
@@ -476,7 +476,17 @@ h1 {
         height: 100%;
     }
 
+    .contact-container{
+        flex-direction: column;
+    }
+
+    .first-contact-info{
+        width: 100%;
+    }
     
+    .second-contact-info{
+        width: 100%;
+    }
 }
 
 @font-face{

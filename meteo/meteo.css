@@ -11,6 +11,10 @@ main{
     margin-top: 25px;
 }
 
+.meteo-image{
+    margin: 0 5%;
+}
+
 main > h2,p{
     text-align: justify;
 }
@@ -77,5 +81,6 @@ main > h3{
     .meteo-image{
         width: 45%;
         height: auto;
+        margin: 0;
     }
 }
