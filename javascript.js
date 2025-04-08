@@ -8,11 +8,15 @@ const colors = [
     '#F0F0F0'
 ];
 const parallaxContainer = document.getElementById('parallax-container');
-const rectangleCount = 35;
+let rectangleCount = 35;
 const rectangles = [];
 
 const viewportHeight = window.innerHeight;
 const viewportWidth = window.innerWidth;
+
+if(viewportWidth < 768) {
+    rectangleCount = 20;
+}
 
 function getRandomColor() {
     return colors[Math.floor(Math.random() * colors.length)];
