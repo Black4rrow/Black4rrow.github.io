@@ -283,7 +283,7 @@ h1 {
     justify-content: space-around;
 }
 
-.social-links > a, .social-links > img{
+.social-links > a, .social-links img{
     width: 32px;
     height: 32px;
 }
