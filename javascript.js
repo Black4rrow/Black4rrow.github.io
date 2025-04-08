@@ -16,3 +16,8 @@ function closeMenu() {
     overlay.classList.remove('active');
 }
 
+let mailText = document.getElementById("mail");
+mailText.addEventListener("click", function() {
+    navigator.clipboard.writeText(mailText.innerHTML);
+    alert("Email copié dans le presse-papier !");
+});
