@@ -15,7 +15,7 @@ main{
     margin: 0 5%;
 }
 
-main > h2,p{
+main > h2, main p{
     text-align: justify;
 }
 
@@ -34,6 +34,7 @@ main > h3{
     margin-top: 20px;
     font-style: italic;
     font-family: "Poppins-Regular", sans-serif;
+    font-weight: 600;
 }
 
 .steps > li{

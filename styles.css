@@ -134,6 +134,7 @@ h1 {
     transition: transform 0.25s;
     object-fit: cover;
     border-radius: 4px;
+    filter: blur(1px);
 }
 
 .project .project-image:hover{
@@ -304,6 +305,23 @@ h1 {
 .mail{
     text-decoration: underline;
     cursor: pointer;
+}
+
+.parallax-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.rectangle {
+    position: absolute;
+    border-radius: 4px;
+    opacity: 0.3;
+    transition: transform 0.1s linear;
 }
 
 @media (min-width: 768px) {

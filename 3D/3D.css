@@ -5,3 +5,33 @@ main{
     justify-content: center;
     text-align: justify;
 }
+
+main > h2, main p{
+    text-align: justify;
+}
+
+main > h2{
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+main > p{
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+main > h3{
+    font-size: 18px;
+    margin-top: 20px;
+    font-style: italic;
+    font-family: "Poppins-Regular", sans-serif;
+    font-weight: 600;
+}
+
+.img-legend{
+    font-size: 15px;
+    color: #694d4d;
+    margin-top: 25px;
+    width: 75%;
+    align-self: center;
+}
