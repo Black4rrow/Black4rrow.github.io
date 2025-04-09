@@ -26,6 +26,7 @@ main > h3{
     font-style: italic;
     font-family: "Poppins-Regular", sans-serif;
     font-weight: 600;
+    text-decoration: underline;
 }
 
 .img-legend{
