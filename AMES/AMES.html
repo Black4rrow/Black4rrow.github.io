@@ -31,11 +31,11 @@
     <main>
         <h1>A.M.E.S</h1>
         <h2>Contexte</h2>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;Ce projet a été réalisé dans le cadre d'une <span class="technical">SAE (Situations d'Apprentissage et d'Évaluation)</span>. Notre objectif était de faire le portage de jeu A.M.E.S sur appareil <span class="technical">Android</span>. Pour le mener à bien, nous étions 4 étudiants.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;Ce projet a été réalisé dans le cadre d'une <span class="technical">SAE (Situations d'Apprentissage et d'Évaluation)</span>.L'objectif de notre groupe de 4 étudiants était de faire le portage de jeu A.M.E.S sur appareil <span class="technical">Android</span>.</p>
         <h3>Qu'est-ce que A.M.E.S ?</h3>
         <p>&nbsp;&nbsp;&nbsp;&nbsp;A.M.E.S est un jeu de chasse aux fantômes en réalité augmentée créé en 2014 par Jean-Philippe Farrugia et Pa Ming Chiu. Il a originalement été développé pour la plateforme <span class="technical">iOS</span> seulement.
-        <br>Le concept du jeu est simple : exorciser les fantômes. 
-        <br>&nbsp;&nbsp;&nbsp;&nbsp;Lorsqu'on lance le jeu, on doit suivre une série de dialogues qui nous mettent dans l'ambiance. Ensuite, des fantômes commencent à nous attaquer et nous sommes plongés dans le noir. Avec la caméra, nous devons donc nous déplacer dans notre environement pour viser ces derniers. Une fois à l'intérieur du curseur, nous devons appuyer sur "Exorcise" pour le faire disparaitre, ce qui allume la lampe torche pour donner un effet que nous attrapons le fantôme avec la lumière.</p>
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;Le concept du jeu est simple : exorciser les fantômes. 
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;Lorsqu'on lance le jeu, il faut se mettre dans le noir pour une meilleure immersion, puis suivre une série de dialogues qui mettent dans l'ambiance. Ensuite, des fantômes commencent à nous attaquer. Avec la caméra, nous devons donc nous déplacer dans l'environement pour viser ces derniers. Une fois à l'intérieur du curseur, nous devons appuyer sur "Exorcise" pour faire disparaitre le fantôme, ce qui allume la lampe torche et donne un effet que nous l'exorcisons.</p>
         <p>&nbsp;&nbsp;&nbsp;&nbsp;Le jeu est basé sur un gestionnaire d'événements. Il éxécute un script en lisant les événements un par un. Voici la liste de tous les événements existant : </p>
         <ul class="steps">
             <li>Caméra : permet d'activer/désactiver la caméra</li>
@@ -64,13 +64,13 @@
             <li>Planification des tâches</li>
             <li>Écriture du code</li>
         </ul>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;L'analyse des projets était une étape très importante, en effet, comme nous allions réutiliser la plupart de ce qui existait déjà, nous devions connaitre les différentes parties de l'application et son fonctionnement.</p>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;La planification des tâches a été une chose assez facile. Comme le plus gros de l'application est seulement de coder l'interprétation des différents événements du script, nous les nous sommes répartit entre nous.</p>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;Grâce à ces étapes préliminaires, l'écriture du code s'est déroulée facilement et sans problèmes, ce qui nous a permis de faire le portage complet du jeu.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;L'analyse des projets était une étape importante, en effet, comme nous allions réutiliser la plupart de ce qui existait déjà, nous devions connaitre les différentes parties de l'application et leur fonctionnement.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;Comme le plus gros du code à écrire était de coder l'interprétation de chaque événement, nous nous les sommes distribué entre nous.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;Grâce à ces étapes préliminaires, l'écriture du code s'est déroulée sans problèmes, ce qui nous a permis de faire le portage complet du jeu.</p>
 
         <h2>Pour aller plus loin</h2>
         <h3>Quelques améliorations</h3>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;Le script des événements déjà présent était écrit en <span class="technical">XML</span> et était peu lisible. Alors nous l'avons réécrit en <span class="technical">JSON</span>. Cela rend le script plus facile à maintenir et compléter au besoin, mais également plus compréhensible. Ainsi, même avec peu de connaissances en informatique, il est possible d'ajouter du contenu au jeu.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;Le script des événements déjà présent était écrit en <span class="technical">XML</span> et était peu lisible. Alors nous l'avons réécrit en <span class="technical">JSON</span>. Cela rend le script plus compréhensible, mais également plus facile à maintenir et à compléter au besoin. Ainsi, même avec peu de connaissances en informatique, il est possible d'ajouter du contenu au jeu.</p>
         <div class="script-images">
             <div>
                 <p class="img-legend">Événement son en XML</p>
@@ -82,11 +82,11 @@
             </div>
         </div>
 
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;Comme le jeu existait depuis 10 ans et qu'il n'avait pas été mis à jour depuis, de nombreuses choses était obsolète ou pouvait être rendues plus performante. C'est ce que nous avons fait. Nous n'utilisons plus rien d'obsolète, ce qui veut dire que le jeu marchera encore pendant plusieurs années sans mises à jour. De plus, nous avons avons essayé d'utiliser des méthodes les plus performantes possibles, supprimant les potentiels ralentissements.</p>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;Enfin, il existait un problème, les valeurs pour la position des éléments étaient données en brut (par exemple : 200 pixels en X). À cause de ça, certains éléments étaient parfois coupés selon la taille de l'appareil utilisé. Alors, ce que nous avons fait, c'est utiliser des pourcentages (par exemple : 20% en X). Grâce à ça, peu importe l'appareil sur lequel on utilise le jeu, tout sera affiché correctement.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;Comme le jeu existait depuis 10 ans et qu'il n'avait pas été mis à jour depuis, de nombreuses choses était obsolète ou pouvait être rendues plus performante. Alors, en réécrivant le code, nous en avons profité pour supprimer toutes les obsolences, permettant au jeu de fonctionner encore plusieurs années sans mises à jour, et d'éviter les potentiels ralentissement et utilisant des méthodes performantes.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;Enfin, il existait un problème de design, les valeurs pour la position des éléments étaient données en brut (par exemple : 200 pixels en X). À cause de ça, certains éléments étaient parfois coupés selon la taille de l'appareil utilisé. Alors, ce que nous avons fait, c'est utiliser des pourcentages (par exemple : 20% en X). Grâce à ça, peu importe l'appareil sur lequel on utilise le jeu, tout sera affiché correctement.</p>
 
         <h3>Une suite au jeu ?</h3>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;L'avantage de A.M.E.S est qu'il est évolutif. En effet, pour créer une suite au jeu il suffit simplement d'écrire un nouveau script (et des images et des sons bien-sûr). Certes, nous pourrions envisager de créer des nouveaux événements pour rendre le jeu plus complet, mais dans l'état actuel, il y a assez de possibilités pour faire une suite.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;L'avantage de A.M.E.S est qu'il est évolutif. En effet, pour créer une suite au jeu il suffit simplement d'écrire un nouveau script et d'ajouter quelques images et sons. A.M.E.S est en réalité un vrai moteur de jeu, comportant tous les éléments de base nécessaire pour permettre à n'importe qui de créer son propre univers en réalité augmentée.</p>
 
         <h2>Quelques images</h2>
         <div class="images-container">
