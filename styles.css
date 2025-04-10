@@ -40,6 +40,8 @@ h1 {
     text-align: left;
     font-size: 64px;
     margin-top: 16px;
+    max-width: 100%;
+    overflow-wrap: anywhere;
 }
 
 .title{

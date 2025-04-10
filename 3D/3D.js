@@ -85,8 +85,18 @@ function animate() {
     renderer.render(scene, camera);
 }
 
+window.addEventListener('load', () => {
+    const width = window.innerWidth / 1.666;
+    
+    camera.aspect = width / width;
+    camera.updateProjectionMatrix();
+    
+    renderer.setSize(width, width);
+    renderer.render(scene, camera);
+});
+
 window.addEventListener('resize', () => {
-    const width = window.innerWidth / 1.333;
+    const width = window.innerWidth / 1.666;
     
     camera.aspect = width / width;
     camera.updateProjectionMatrix();
@@ -97,7 +107,7 @@ window.addEventListener('resize', () => {
 
 animate();
 canvas.style.position = 'relative';
-canvas.style.width = '75%';
+canvas.style.width = '60%';
 canvas.style.aspectRatio = '1/1';
 canvas.style.margin = '0 auto';
 renderer.setSize(canvas.clientWidth, canvas.clientWidth);
