@@ -241,6 +241,10 @@ h1 {
     color: #c23535;
 }
 
+.defined{
+    text-decoration: underline;
+}
+
 .copyright {
     width: 100%;
     color: rgb(69, 69, 69);
@@ -447,7 +451,7 @@ h1 {
     }
 
     .pro1::before{
-        background-image: url("https://picsum.photos/200");
+        background-image: url("/img/ames_code.png");
     }
 
     .pro2::before{

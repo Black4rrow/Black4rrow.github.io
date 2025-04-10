@@ -20,6 +20,11 @@ main > p{
     margin-top: 10px;
 }
 
+b{
+    font-family: 'Poppins-Semibold', sans-serif;
+    font-size: 16px;
+}
+
 main > h3{
     font-size: 18px;
     margin-top: 20px;
@@ -28,6 +33,21 @@ main > h3{
     font-weight: 600;
     text-decoration: underline;
 }
+
+.tooltip {
+    position: fixed;
+    background: #333;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    z-index: 1000;
+    max-width: 200px;
+    height: auto;
+  }
 
 .img-legend{
     font-size: 15px;

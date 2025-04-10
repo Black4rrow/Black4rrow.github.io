@@ -101,3 +101,36 @@ canvas.style.width = '75%';
 canvas.style.aspectRatio = '1/1';
 canvas.style.margin = '0 auto';
 renderer.setSize(canvas.clientWidth, canvas.clientWidth);
+
+// Tooltip pour les définitions
+
+const tooltip = document.getElementById("tooltip");
+let tooltipTimeout;
+
+document.querySelectorAll(".defined").forEach(el => {
+  const definition = el.getAttribute("data-definition");
+
+  el.addEventListener("mousemove", (e) => {
+    tooltip.textContent = definition;
+    tooltip.style.left = `${e.clientX + 10}px`;
+    tooltip.style.top = `${e.clientY + 10}px`;
+    tooltip.style.opacity = "1";
+  });
+
+  el.addEventListener("mouseleave", () => {
+    tooltip.style.opacity = "0";
+  });
+
+  el.addEventListener("click", (e) => {
+    tooltip.textContent = definition;
+    tooltip.style.left = `${e.clientX}px`;
+    tooltip.style.top = `${e.clientY}px`;
+    tooltip.style.opacity = "1";
+
+    clearTimeout(tooltipTimeout);
+    tooltipTimeout = setTimeout(() => {
+      tooltip.style.opacity = "0";
+    }, 5000);
+  });
+});
+
