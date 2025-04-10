@@ -49,14 +49,15 @@ loader.setDRACOLoader(dracoLoader);
          const loadedModel = gltf.scene;
          
          loadedModel.traverse((child) => {
-             if (child.isMesh) {
-                 child.material = new THREE.MeshStandardMaterial({
-                     color: 0x808080,
-                     roughness: 0.7,
-                     metalness: 0.2
-                 });
-             }
-         });
+            if (child.isMesh) {
+                child.material = new THREE.MeshStandardMaterial({
+                    color: 0x808080,
+                    roughness: 0.7,
+                    metalness: 0.2
+                });
+            }
+        });
+   
          loadedModel.scale.set(scaleFactor, scaleFactor, scaleFactor);
          scene.add(loadedModel);
      },
@@ -74,7 +75,6 @@ controls.enablePan = false;
 controls.autoRotate = true;
 controls.autoRotateSpeed = 10;
 
-controls.addEventListener( 'change', ()=>{renderer.render(scene, camera)} );
 controls.update();
 
 function animate() {
@@ -92,7 +92,6 @@ window.addEventListener('load', () => {
     camera.updateProjectionMatrix();
     
     renderer.setSize(width, width);
-    renderer.render(scene, camera);
 });
 
 window.addEventListener('resize', () => {
@@ -102,7 +101,6 @@ window.addEventListener('resize', () => {
     camera.updateProjectionMatrix();
     
     renderer.setSize(width, width);
-    renderer.render(scene, camera);
 });
 
 animate();
