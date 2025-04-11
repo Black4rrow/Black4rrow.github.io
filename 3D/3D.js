@@ -141,4 +141,3 @@ document.querySelectorAll(".defined").forEach(el => {
     }, 5000);
   });
 });
-
