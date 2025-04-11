@@ -86,7 +86,7 @@ function animate() {
 }
 
 window.addEventListener('load', () => {
-    const width = window.innerWidth / 1.666;
+    const width = window.innerWidth / 2.5;
     
     camera.aspect = width / width;
     camera.updateProjectionMatrix();
@@ -95,7 +95,7 @@ window.addEventListener('load', () => {
 });
 
 window.addEventListener('resize', () => {
-    const width = window.innerWidth / 1.666;
+    const width = window.innerWidth / 2.5;
     
     camera.aspect = width / width;
     camera.updateProjectionMatrix();
@@ -105,7 +105,7 @@ window.addEventListener('resize', () => {
 
 animate();
 canvas.style.position = 'relative';
-canvas.style.width = '60%';
+canvas.style.width = '40%';
 canvas.style.aspectRatio = '1/1';
 canvas.style.margin = '0 auto';
 renderer.setSize(canvas.clientWidth, canvas.clientWidth);

@@ -49,8 +49,13 @@ h1 {
     margin: 200px auto 50vh auto;
 }
 
+.title > h1{
+    font-size: 100px;
+}
+
 .little-bio{
-    margin-top: 52px;
+    margin-top: 64px;
+    font-style: italic;
 }
 
 .subtitle{
